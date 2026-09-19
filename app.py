@@ -14,6 +14,11 @@ class Handler(BaseHTTPRequestHandler):
         self.wfile.write(b"DropFisher DevOps Project")
 
 
-server = HTTPServer(("0.0.0.0", 8080), Handler)
-print("Server running on port 8080")
-server.serve_forever()
+def run():
+    server = HTTPServer(("0.0.0.0", 8080), Handler)
+    print("Server running on port 8080")
+    server.serve_forever()
+
+
+if __name__ == "__main__":
+    run()
