@@ -6,7 +6,7 @@ class Handler(BaseHTTPRequestHandler):
         if self.path == "/health":
             self.send_response(200)
             self.end_headers()
-            self.wfile.write(b"FAILED")
+            self.wfile.write(b"OK")
             return
 
         self.send_response(200)
