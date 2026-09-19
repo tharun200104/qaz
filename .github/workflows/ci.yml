@@ -40,4 +40,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: tharunlinux/devops-final-project:latest
+          tags: tharunlinux/qaz:latest
