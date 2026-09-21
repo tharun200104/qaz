@@ -41,4 +41,18 @@ jobs:
           context: .
           push: true
           tags: tharundevops/qaz:latest
- 
+
+  deploy:
+    needs: docker
+    runs-on: self-hosted
+
+    steps:
+      - name: Deploy to Kubernetes
+        run: |
+          kubectl set image deployment/qaz \
+            qaz=tharundevops/qaz:latest \
+            -n dropfisher
+
+      - name: Wait for rollout
+        run: |
+          kubectl rollout status deployment/qaz -n dropfisher
